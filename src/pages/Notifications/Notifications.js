@@ -9,7 +9,7 @@ function Notifications(){
             <Search></Search>
             <ul className={styles.Notifications_wrapper}>
                 <li className={styles.Notifications_item}>
-                    <div className={}></div>
+                   
                 </li>
             </ul>
         </div>
