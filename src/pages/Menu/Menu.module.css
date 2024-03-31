@@ -1,0 +1,64 @@
+.Menu{
+    position: relative;
+}
+.Menu_list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.Menu_item{
+    position: relative;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--dark);
+    color:  var(--light);
+    border-radius: 16px;
+    cursor: pointer;
+    tab-index: 1;
+    border: 1px solid var(--primary);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.Menu_item:after{
+    position: absolute;
+    content: "";
+    top: 24px;
+    left: -58px;
+    width: 708px;
+    height: 387px;
+    background: var(--primary-light);
+    opacity: 0.2;
+    border-radius: 50%;
+}
+
+.Menu_item:hover{
+    transform: scale(1.05);
+}
+
+.Menu_icon{
+    width: 80px;
+    height: 80px;
+}
+
+.Menu_icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Menu_text{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+}
+
+.Menu_text span{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}

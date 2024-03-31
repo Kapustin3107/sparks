@@ -1,0 +1,28 @@
+.Search{
+    position: relative;
+}
+
+.Search:after{
+    position: absolute;
+    content: "";
+    top: 8px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: url("../../img/search.svg");
+}
+
+
+.Search_input{
+    padding: 0 40px 0 10px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--primary);
+    background: var(--dark);
+    border-radius: 8px;
+    color: var(--light);
+}
+
+.Search_input::placeholder{
+    color: var(--light);
+}

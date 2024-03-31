@@ -1,0 +1,65 @@
+.Login{
+    padding: 20px;
+    position: relative;
+}
+
+.Login fieldset{
+    padding: 0;
+    border: none;
+}
+
+.Login_logo{
+    margin-bottom: 30px;
+}
+
+.Login_logo img{
+    margin: 0 auto;
+    display: block;
+    width: 224px;
+}
+
+.Login fieldset input{
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    background: var(--dark);
+    font-size: 14px;
+    color: var(--light);
+}
+
+.Login fieldset input:focus{
+    outline: none;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.Login fieldset input::placeholder{
+    color: var(--light);
+}
+
+.Login_title{
+    font-family: var(--font-highlighted);
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--light);
+    font-size: 29px;
+    text-align: center;
+}
+
+.Login_row{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.Login_column{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.Login_form button[type="submit"]{
+    margin-top: 30px;
+}

@@ -1,0 +1,11 @@
+.Header{
+    background: var(--dark);
+    padding: 20px 0;
+}
+
+.Header_logo{
+    display: block;
+    margin: 0 auto;
+    width: 124px;
+    height: auto;
+}

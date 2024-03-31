@@ -1,0 +1,84 @@
+.Profile{
+    font-size: 16px;
+    position: relative;
+}
+
+.Profile_image{
+    margin-bottom: 17px;
+    height: 200px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Profile_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+
+.Profile_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.Profile_content_row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.Profile_content_column span{
+    display: flex;
+}
+
+.Profile_content_row:first-child{
+    margin-bottom: 16px;
+}
+
+.Profile_content_row:nth-child(8),
+.Profile_content_row:last-child{
+    margin-top: 24px;
+}
+
+.Profile_label{
+    color: var(--light);
+    font-weight: 500;
+}
+
+.Profile_contact_label{
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.Profile_socials{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Profile_socials_link{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.Profile_wallet_value{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: var(--font-highlighted);
+}
+
+.Profile_wallet_value:before{
+    margin-right: 10px;
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("../../img/check.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+}

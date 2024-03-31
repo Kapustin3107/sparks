@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+    /*color scheme*/
+    --primary: rgba(239, 18, 167, 1);
+    --primary-light: #F2B5DE;
+    --accent: #97B2FF;
+    --dark: #000;
+    --light: #fff;
+
+    /*typography*/
+    --font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-highlighted: "Jost", sans-serif;
+    --font-size: 14px;
+    --font-weight: 400;
+    --line-height: 1.5;
+
+    /*others*/
+    --transition: all 0.3s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.App{
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    color: var(--light);
+    line-height: var(--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: rgba(12, 2, 34, 1);
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.center{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    font-weight: 800;
+    background: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover{
+    filter: brightness(0.85);
+}
+
+.btn.btn_transparent{
+    min-height: 28px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
 }
