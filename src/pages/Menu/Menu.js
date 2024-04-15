@@ -6,6 +6,8 @@ import icon_2 from "../../img/menu-2.svg"
 import icon_3 from "../../img/menu-3.svg"
 import icon_4 from "../../img/menu-4.svg"
 
+import { Link } from "react-router-dom";
+
 function Menu(){
     
     return(
@@ -16,7 +18,7 @@ function Menu(){
             
             <ul className={styles.Menu_list}>
                 
-                <li className={styles.Menu_item}>
+                <Link className={styles.Menu_item} to={'/profile'}>
                     <div className={styles.Menu_icon}>
                         <img src={icon_1} width="92" height="83" alt="Profile"/>
                     </div>
@@ -26,10 +28,10 @@ function Menu(){
                             <p>Your own profile</p>
                         </div>
                     </div>
-                </li>
-                
-                <li className={styles.Menu_item}>
-                    <div className={styles.Menu_icon}>
+                </Link>
+
+                <Link className={styles.Menu_item} to={'/users'}>
+                      <div className={styles.Menu_icon}>
                         <img src={icon_2} width="100" height="100" alt="Search"/>
                     </div>
                     <div className={styles.Menu_text}>
@@ -38,9 +40,9 @@ function Menu(){
                             <p>Guys from our workspace</p>
                         </div>
                     </div>
-                </li>
-                
-                <li className={styles.Menu_item}>
+                </Link>
+
+                <Link className={styles.Menu_item} to={'/transfer'}>
                     <div className={styles.Menu_icon}>
                         <img src={icon_3} width="100" height="100" alt="Transfer"/>
                     </div>
@@ -51,20 +53,19 @@ function Menu(){
                             <p>Send your stars</p>
                         </div>
                     </div>
-                </li>
-                
-                <li className={styles.Menu_item}>
-                    <div className={styles.Menu_icon}>
+                </Link>
+
+                <Link className={styles.Menu_item} to={'/store'}>
+                     <div className={styles.Menu_icon}>
                         <img src={icon_4} width="100" height="100" alt="Store"/>
-                    </div>
-                    
+                     </div>
                     <div className={styles.Menu_text}>
                         <div className={styles.Menu_text_content}>
                             <span>Store</span>
                             <p>But something spicial</p>
                         </div>
                     </div>
-                </li>
+                </Link>
             </ul> 
         </div>
     )

@@ -1,0 +1,65 @@
+.Transfer{
+    position: relative;
+}
+
+.Transfer_wrapper{
+    padding: 40px 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+}
+
+.Transfer_user_img{
+    height: 235px;
+    border-radius: 8px;
+}
+
+.Transfer_user_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.Transfer_form{
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+}
+
+.Transfer_select{
+    position: relative;
+}
+
+.Transfer_select:after{
+    position: absolute;
+    content: "";
+    top: 9px;
+    right: 9px;
+    width: 24px;
+    height: 24px;
+    background: url("../../img/arrow_bottom.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.Transfer_message label,
+.Transfer_stars span{
+    font-weight: 700;
+}
+
+.Transfer_message textarea{
+    height: 106px;
+    resize: none;
+}
+
+.Transfer_stars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+

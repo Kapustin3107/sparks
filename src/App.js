@@ -10,16 +10,17 @@ import Users from "./pages/Users/Users.js";
 import Cart from "./pages/Cart/Cart.js";
 import Store from "./pages/Store/Store.js";
 import Notifications from "./pages/Notifications/Notifications.js";
+import Transfer from "./pages/Transfer/Transfer.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Login/>,
+    element:  <Menu/>,
     errorElement: <h2>404 Page not found</h2>
   },
   {
-    path: "/menu",
-    element:  <Menu/>
+    path: "/login",
+    element:  <Login/>
   },
   {
     path: "/profile",
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/notifications",
     element:  <Notifications/>
+  },
+  {
+    path: "/transfer",
+    element:  <Transfer/>
   }
 ])
 
