@@ -6,8 +6,12 @@ import product_img from "../../img/store.jpg"
 function Store(){
     return (
         <div className={styles.Store}>
+            
             <Label title={"Sparks Store"}></Label>
-            <Search></Search>
+            <div className={styles.Store_inner}>
+                <Search></Search>
+            </div>
+
             <ul className={styles.Store_wrapper}>
                 <li className={styles.Store_item}>
                     <div className={styles.Store_item_image}>

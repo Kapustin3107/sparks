@@ -2,8 +2,12 @@
     position: relative;
 }
 
+.Transfer_inner{
+    padding: 0 20px;
+}
+
 .Transfer_wrapper{
-    padding: 40px 0;
+    padding: 40px 20px;
     position: relative;
     display: grid;
     grid-template-columns: 140px 1fr;

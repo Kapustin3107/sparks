@@ -1,5 +1,8 @@
+.Store_inner{
+    padding: 0 20px;
+}
 .Store_wrapper{
-    padding: 32px 0;
+    padding: 32px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -14,7 +17,6 @@
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
-    
 }
 
 .Store_item:hover{

@@ -54,9 +54,6 @@ function App() {
       <Header/>
       <main className="App_main_section">
         <RouterProvider router={router}/>
-        {/*<Login/>*/}
-        {/*<Menu/>*/}
-        {/*<Profile/>*/}
       </main>
     </div>
   );

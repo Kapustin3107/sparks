@@ -2,6 +2,7 @@
     position: relative;
 }
 .Menu_list{
+    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;

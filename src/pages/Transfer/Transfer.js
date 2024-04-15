@@ -13,7 +13,9 @@ function Transfer(){
     return(
         <div className={styles.Transfer}>
             <Label title={"Transfer"}/>
-            <Search/>
+            <div className={styles.Transfer_inner}>
+                <Search/>
+            </div>
             <div className={styles.Transfer_wrapper}>
                 <div className={styles.Transfer_user_img}s>
                     <img src={Image} width="80" height="100" alt="User"/>

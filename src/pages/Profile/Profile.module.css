@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.Profile_wrapper{
+    padding: 0 20px;
+}
+
 .Profile_image{
     margin-bottom: 17px;
     height: 200px;
