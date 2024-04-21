@@ -11,6 +11,7 @@ import Cart from "./pages/Cart/Cart.js";
 import Store from "./pages/Store/Store.js";
 import Notifications from "./pages/Notifications/Notifications.js";
 import Transfer from "./pages/Transfer/Transfer.js";
+import Product from "./pages/Product/Product.js";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/transfer",
     element:  <Transfer/>
+  },
+  {
+    path: "/product/:productID",
+    element:  <Product/>
   }
 ])
 

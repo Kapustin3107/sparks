@@ -1,0 +1,34 @@
+.Product{
+    position: relative;
+}
+
+.Product_inner{
+    padding: 0 20px;
+}
+
+.Product_image{
+    position: relative;
+}
+
+.Product_image img{
+    width: 100%;
+    height: auto;
+}
+
+.Product_wrapper{
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px
+}
+
+.Product_info{
+    display: flex;
+    flex-flow: column;
+}
+
+.Product_info_footer{
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;;
+}
