@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.Login label{
+    color: var(--light) !important;
+}
+
 .Login fieldset{
     padding: 0;
     border: none;

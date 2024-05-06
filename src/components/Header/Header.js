@@ -1,5 +1,7 @@
 import logo from "../../img/logo.svg"
 import styles from "./Header.module.css"
+import { Link } from 'react-router-dom';
+
 
 function Header(){
     return (
@@ -10,5 +12,4 @@ function Header(){
         </header>
     )
 }
-
 export default Header

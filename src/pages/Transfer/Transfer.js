@@ -5,7 +5,7 @@ import Image from "../../img/transaction-1.jpg"
 
 import { InputNumber } from 'antd';
 
-const onChange = (value: number) => {
+const onChange = (value) => {
     console.log('changed', value);
 };
 
@@ -17,7 +17,7 @@ function Transfer(){
                 <Search/>
             </div>
             <div className={styles.Transfer_wrapper}>
-                <div className={styles.Transfer_user_img}s>
+                <div className={styles.Transfer_user_img}>
                     <img src={Image} width="80" height="100" alt="User"/>
                 </div>
                 <div className={styles.Transfer_form}>
@@ -35,14 +35,13 @@ function Transfer(){
                         <InputNumber className={styles.Cart_input} min={1} max={10} defaultValue={3} onChange={onChange} />
                     </div>
                     <div className={styles.Transfer_message}>
-                        <label for="message">Sending stars</label>
+                        <label>Sending stars</label>
                         <textarea className="input" name="message" id="message" cols="30" rows="5"></textarea>
                     </div>
                     
-                    <diva className={styles.Transfer_btn}>
+                    <div className={styles.Transfer_btn}>
                         <button className="btn" type="button">Send</button>
-                    </diva>
-                    
+                    </div>
                 </div>
             </div>
         </div>

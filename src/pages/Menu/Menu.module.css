@@ -63,3 +63,9 @@
     font-size: 20px;
     font-weight: 700;
 }
+
+.Menu_out{
+    width: 100%;
+    color: var(--light);
+    text-align: center;
+}

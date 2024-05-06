@@ -3,6 +3,7 @@
     flex-direction: column;
     outline: 1px solid #ccc;
     background: url("./img/bg-mob.png") no-repeat;
+    color: var(--light);
     background-size: cover;
 }
 
