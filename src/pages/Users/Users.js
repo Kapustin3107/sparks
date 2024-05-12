@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react"
 
-
-
 import Label from "../../components/Label/Label.js"
 import Search from "../../components/Search/Search.js"
 import styles from "./Users.module.css"
@@ -12,9 +10,9 @@ const API_URL = "http://localhost:1337/api/users?populate=*";
 
 function Users(){
     
-    const [users, setUsers] = useState([]);
-    const [error, setError] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const [users, setUsers] = useState([])
+    const [error, setError] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect( () => {
         (async function fetchData() {

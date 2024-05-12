@@ -12,3 +12,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
+
+@media(min-width: 920px){
+    .Store_wrapper{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

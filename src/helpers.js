@@ -29,3 +29,4 @@ export const Protector = ({ Component }) => {
 
     return <Component />;
 };
+

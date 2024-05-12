@@ -2,10 +2,6 @@
     position: relative;
 }
 
-.Product_inner{
-    padding: 0 20px;
-}
-
 .Product_image{
     position: relative;
 }
@@ -15,11 +11,19 @@
     height: auto;
 }
 
+.Product_container{
+    padding: 20px;
+}
+
 .Product_wrapper{
     padding: 40px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px
+    gap: 20px;
+    background: var(--dark);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .Product_info{
