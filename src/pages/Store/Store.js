@@ -21,14 +21,11 @@ function Store(){
                 const res =  await fetch(API_URL);
                 const responceData = await res.json();
                 const products = await responceData.data;
-
                 setProducts(products);
-
             } catch{
                 setError(error.message);
             }
             setIsLoading(false);
-
         })()
     }, [])
 

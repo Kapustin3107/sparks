@@ -16,7 +16,7 @@ export const userData = () => {
     return JSON.parse(stringifiedUser || {});
 };
 
-export const Protector = ({ Component }) => {
+export const Protector = ({Component}) => {
     const navigate = useNavigate();
 
     const { jwt } = userData();

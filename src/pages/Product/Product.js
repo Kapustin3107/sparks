@@ -28,22 +28,22 @@ function Product (){
                 
                 setProductData(currentProductData);
 
-//               cart button state
-//                const cartItems = localStorage.cart
-//                console.log(addedState)
-//                console.log(productData.attributes.product_id)
 
-//                if(cartItems){
-//
-//                    const itemsArr = JSON.parse(cartItems).products
-//                    itemsArr.forEach(item => {
-//                        if(item === productData.attributes.product_id){
-//                            setAddedState("Product is added")
-//                        }
-//                    })
-//                } else {
-//                    console.log("empty localStorage")
-//                }
+//               cart button state
+                const cartItems = localStorage.cart
+
+                if(cartItems){
+
+                    const itemsArr = JSON.parse(cartItems).products
+                    console.log(itemsArr)
+                    itemsArr.forEach(item => {
+                        if(item == currentProductData.id){
+                            setAddedState("Product is added")
+                        }
+                    })
+                } else {
+                    console.log("empty localStorage")
+                }
 
             } catch{
                 setError(error.message);
@@ -58,6 +58,8 @@ function Product (){
     }
     
     function addProduct(){
+
+        if(addedState === "Product is added") return
 
         const currentProductArray = []
 
@@ -89,6 +91,7 @@ function Product (){
                     products: addedItems,
                 })
             )
+            setAddedState("Product is added")
         }
     }
 
@@ -117,7 +120,7 @@ function Product (){
                                 </div>
 
                             </div>
-                            <button className="btn" onClick={addProduct}>
+                            <button className={"btn"} onClick={addProduct}>
                                 {addedState}
                             </button>
                        </div>

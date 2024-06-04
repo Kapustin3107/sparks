@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function Label(props){
     const title = props.title;
+
     return(
         <div className={styles.Label}>
             <Link to="/" className={styles.Label_btn}>

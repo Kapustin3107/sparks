@@ -1,7 +1,10 @@
 .Header{
-    display: none;
+    position: relative;
+    width: 100%;
     background: var(--dark);
     padding: 20px 0;
+    z-index: 12;
+    transition: all 0.3s;
 }
 
 .Header_logo{
@@ -10,6 +13,18 @@
     width: 124px;
     height: auto;
 }
+
+.Header_burger{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 @media(min-width: 768px){

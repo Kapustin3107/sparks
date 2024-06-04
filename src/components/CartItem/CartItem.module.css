@@ -1,0 +1,92 @@
+.Cart_item{
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 24px;
+}
+
+.Cart_item_image{
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.Cart_item_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Cart_item_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.Cart_item_title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-family: var(--font-highlighted);
+    font-weight: 600;
+}
+
+.Cart_item_title span{
+    flex-grow: 1;
+}
+
+.Cart_item_options,
+.Cart_item_footer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 8px;
+}
+
+.Cart_item_options{
+    margin-bottom: 16px;
+}
+
+.Item_option_name{
+    font-weight: 700;
+    font-family: var(--font-highlighted);
+}
+
+.Cart_input{
+    max-width: 50px;
+    border: 1px solid var(--primary);
+}
+
+.Cart_item_delete{
+    width: 20px;
+    height: 20px;
+    background: url("../../img/trash-outline.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+}
+
+
+.Cart_item_total{
+    display: flex;
+    align-content: center;
+    font-family: var(--font-highlighted);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.Cart_item_total:before{
+    display: inline-block;
+    margin-right: 8px;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("../../img/check-color.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

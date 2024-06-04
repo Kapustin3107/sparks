@@ -11,8 +11,6 @@ import link from "../../img/subtract.svg"
 
 function Person(props){
     
-    console.log(props.props)
-    
     return (
         <div className={styles.Person}>
             <Label title={props.props.user_fullname}></Label>

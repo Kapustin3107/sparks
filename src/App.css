@@ -16,6 +16,10 @@
     flex-grow: 1;
 }
 
+.closed > menu{
+    left: 100%;
+}
+
 @media(min-width: 768px){
     .App{
         background-image: url("./img/bg-web.png");

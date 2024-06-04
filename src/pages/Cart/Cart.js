@@ -1,93 +1,77 @@
+import { useState, useEffect } from "react"
+import startPayment from "../../services/Payment/Payment"
 import styles from "./Cart.module.css"
 import Label from "../../components/Label/Label.js"
-import Search from "../../components/Search/Search.js"
-import cart_image from "../../img/cart.jpg"
-import { InputNumber } from 'antd';
+import CartItem from "../../components/CartItem/CartItem.js"
 
-
-const onChange = (value: number) => {
-    console.log('changed', value);
-};
 function Cart(){
+    const addedItems = (localStorage.cart) ? JSON.parse(localStorage.cart) : null
+    const [currentCart, setCurrentCart] = useState([])
+    const [totalAmount, setTotalAmount] = useState(0)
+
+    useEffect(() => {
+        if(addedItems){
+            setCurrentCart(addedItems.products)
+            calculateSumm(addedItems.products)
+        }
+    }, [])
+
+    //calculate cart total price
+    async function calculateSumm(items) {
+        let total = 0
+
+        for(const item of items){
+            console.log(item)
+            const API_URL = `http://localhost:1337/api/products/${item}`
+            const res =  await fetch(API_URL)
+            const responceData = await res.json();
+            const currentProductData = await responceData.data;
+
+            total += responceData.data.attributes.product_price
+            console.log(total)
+        }
+        setTotalAmount(total)
+    }
+
+    //delete items from cart function
+    const deleteProductFromCart = ({target}) => {
+        const currentCart = localStorage.getItem("cart")
+        if (currentCart) {
+            const cartData = JSON.parse(currentCart)
+            const cardDataUpdated = []
+            cartData.products.forEach(item => {
+                if(item !== target.id){
+                    cardDataUpdated.push(item)
+                }
+            })
+            localStorage.setItem(
+                "cart",
+                JSON.stringify({
+                    products: cardDataUpdated,
+                })
+            )
+            setCurrentCart(cardDataUpdated)
+            calculateSumm(cardDataUpdated)
+        }
+    }
+
+
     return(
         <div className={styles.Cart}>
-            <Label title={"Basket"}></Label>
-            <Search></Search>
-            
+            <Label title={"Basket"}/>
             <ul className={styles.Cart_wrapper}>
-                <li className={styles.Cart_item}>
-                    <div className={styles.Cart_item_image}>
-                        <img src={cart_image} width="92" height="83" alt="Cart"/>
-                    </div>
-                    <div className={styles.Cart_item_content}>
-                        <div className={styles.Cart_item_title}>Hudi Sparks</div>
-                        <div className={styles.Cart_item_options}>
-                            <div className={styles.Cart_item_option}>
-                                <span className={styles.Item_option_name}>Size: </span>
-                                <span className={styles.Item_option_value}>M</span>
-                            </div>
-                            <div className={styles.Cart_item_option}>
-                                <span className={styles.Item_option_name}>Color: </span>
-                                <span className={styles.Item_option_value}>Orange</span>
-                            </div>
-                        </div>
-                        <div className={styles.Cart_item_footer}>
-                            <InputNumber className={styles.Cart_input} min={1} max={10} defaultValue={3} onChange={onChange} />
-                            <span className={styles.Cart_item_total}>200</span>
-                        </div>
-                    </div>
-                </li>
-                
-                <li className={styles.Cart_item}>
-                    <div className={styles.Cart_item_image}>
-                        <img src={cart_image} width="92" height="83" alt="Cart"/>
-                    </div>
-                    <div className={styles.Cart_item_content}>
-                        <div className={styles.Cart_item_title}>Hudi Sparks</div>
-                        <div className={styles.Cart_item_options}>
-                            <div className={styles.Cart_item_option}>
-                                <span className={styles.Item_option_name}>Size: </span>
-                                <span className={styles.Item_option_value}>M</span>
-                            </div>
-                            <div className={styles.Cart_item_option}>
-                                <span className={styles.Item_option_name}>Color: </span>
-                                <span className={styles.Item_option_value}>Orange</span>
-                            </div>
-                        </div>
-                        <div className={styles.Cart_item_footer}>
-                            <InputNumber className={styles.Cart_input} min={1} max={10} defaultValue={3} onChange={onChange} />
-                            <span className={styles.Cart_item_total}>200</span>
-                        </div>
-                    </div>
-                </li>
-                
-                <li className={styles.Cart_item}>
-                    <div className={styles.Cart_item_image}>
-                        <img src={cart_image} width="92" height="83" alt="Cart"/>
-                    </div>
-                    <div className={styles.Cart_item_content}>
-                        <div className={styles.Cart_item_title}>Hudi Sparks</div>
-                        <div className={styles.Cart_item_options}>
-                            <div className={styles.Cart_item_option}>
-                                <span className={styles.Item_option_name}>Size: </span>
-                                <span className={styles.Item_option_value}>M</span>
-                            </div>
-                            <div className={styles.Cart_item_option}>
-                                <span className={styles.Item_option_name}>Color: </span>
-                                <span className={styles.Item_option_value}>Orange</span>
-                            </div>
-                        </div>
-                        <div className={styles.Cart_item_footer}>
-                            <InputNumber className={styles.Cart_input} min={1} max={10} defaultValue={3} onChange={onChange} />
-                            <span className={styles.Cart_item_total}>200</span>
-                        </div>
-                    </div>
-                </li>
+                    {
+                        (currentCart && currentCart.length) ?
+                            (currentCart.map((item, index) => <CartItem key={index} id={item} deleteProductFromCart={deleteProductFromCart}/>)):
+                            <h1>Cart is empty</h1>
+                    }
             </ul>
-            
             <div className={styles.Cart_footer}>
-                <div className={styles.Cart_footer_label}>Subtotal</div>
-                <div className={styles.Cart_footer_amount}>820</div>
+                <div className={styles.Cart_footer_wrapper}>
+                    <div className={styles.Cart_footer_label}>Subtotal</div>
+                    <div className={styles.Cart_footer_amount}>{totalAmount}</div>
+                </div>
+                <button className={`${styles.Cart_checkout_btn} btn`} onClick={startPayment}>Pay</button>
             </div>
         </div>
     )
