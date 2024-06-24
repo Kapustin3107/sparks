@@ -22,7 +22,7 @@ function Cart(){
 
         for(const item of items){
             console.log(item)
-            const API_URL = `http://localhost:1337/api/products/${item}`
+            const API_URL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${item}`
             const res =  await fetch(API_URL)
             const responceData = await res.json();
             const currentProductData = await responceData.data;

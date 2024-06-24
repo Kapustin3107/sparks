@@ -7,7 +7,7 @@ import Product from "../../components/Product/Product.js"
 
 
 
-const API_URL = "http://localhost:1337/api/products?populate=*";
+const API_URL = "https://stingray-app-qqjlx.ondigitalocean.app/api/products?populate=*";
 
 function Store(){
 

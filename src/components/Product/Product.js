@@ -1,7 +1,7 @@
 import styles from "./Product.module.css"
 import { Link } from "react-router-dom";
 
-function Product(props){
+function Product({props}){
     
     const {
         product_name,
@@ -10,12 +10,16 @@ function Product(props){
         product_image,
         product_shortname,
         stock
-    } = props.props;
+    } = props;
+
+
     
     const imageSrcPath = product_image.data.attributes.url;
     
+    console.log(imageSrcPath)
+
     //USE TO BE CHANGED TO ANOTHER DOMAIN NAME
-    const domain = "http://localhost:1337";
+    const domain = "https://stingray-app-qqjlx.ondigitalocean.app";
     
     return (
         

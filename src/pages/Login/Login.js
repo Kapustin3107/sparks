@@ -31,7 +31,7 @@ function Login(){
         e.preventDefault()
         try {
             if(user.identifier && user.password){
-                const url = "http://localhost:1337/api/auth/local"
+                const url = "https://stingray-app-qqjlx.ondigitalocean.app/api/auth/local"
                 const { data } = await axios.post(url, user);
 
                 if (data.jwt) {

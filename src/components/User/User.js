@@ -4,7 +4,7 @@ import styles from "./User.module.css"
 function User(props){
     
     const userData = props.props
-    const imageSrc = `http://localhost:1337${userData.user_image.url}`
+    const imageSrc = `https://stingray-app-qqjlx.ondigitalocean.app${userData.user_image.url}`
     
     console.log(userData)
     

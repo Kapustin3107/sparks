@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const storeUser = (data) => {
+    console.log(data)
     localStorage.setItem(
         "user",
         JSON.stringify({

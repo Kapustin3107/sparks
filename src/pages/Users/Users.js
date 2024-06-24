@@ -6,7 +6,7 @@ import styles from "./Users.module.css"
 import User from "../../components/User/User.js"
 
 import { Carousel } from "antd"
-const API_URL = "http://localhost:1337/api/users?populate=*";
+const API_URL = "https://stingray-app-qqjlx.ondigitalocean.app/api/users?populate=*";
 
 function Users(){
     

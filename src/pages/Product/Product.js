@@ -9,7 +9,7 @@ function Product (){
     const [productData, setProductData] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    const domain = "http://localhost:1337";
+    const domain = "https://stingray-app-qqjlx.ondigitalocean.app";
     const [addedState, setAddedState] = useState("Add to cart")
     
 
@@ -18,7 +18,7 @@ function Product (){
         const pathSegments = pathname.split('/');
         const id = pathSegments[pathSegments.length - 1];
         
-        const productURL = `http://localhost:1337/api/products/${id}?populate=*`;
+        const productURL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${id}?populate=*`;
         
         (async function fetchProductData() {
             try{
@@ -27,8 +27,6 @@ function Product (){
                 const currentProductData = await responceData.data;
                 
                 setProductData(currentProductData);
-
-
 //               cart button state
                 const cartItems = localStorage.cart
 

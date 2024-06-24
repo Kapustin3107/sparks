@@ -9,15 +9,14 @@ import telegram from "../../img/telegram.svg"
 import twitter from "../../img/twitter.svg"
 import link from "../../img/subtract.svg"
 
-function Person(props){
-    
+function Person({props}){
     return (
         <div className={styles.Person}>
-            <Label title={props.props.user_fullname}></Label>
+            <Label title={props.user_fullname}></Label>
         
             <div className={styles.Person_wrapper}>
                 <div className={styles.Person_image}>
-                    <img src={`http://localhost:1337${props.props.user_image.url}`} width="300" height="100" alt="profile photo"/>
+                    <img src={`https://stingray-app-qqjlx.ondigitalocean.app${props.user_image.url}`} width="300" height="100" alt="profile photo"/>
                 </div>
         
                 <div className={styles.Person_content}>
@@ -26,7 +25,7 @@ function Person(props){
                             <button className="btn">Edit profile</button>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_wallet_value}>{props.props.user_coins}</span>
+                            <span className={styles.Person_wallet_value}>{props.user_coins}</span>
                         </div>
                     </div>
         
@@ -35,7 +34,7 @@ function Person(props){
                             <span className={styles.Person_label}>Nickname</span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_nickname}>{props.props.user_nickname}</span>
+                            <span className={styles.Person_nickname}>{props.user_nickname}</span>
                         </div>
                     </div>
                     
@@ -44,7 +43,7 @@ function Person(props){
                             <span className={styles.Person_label}>Full name</span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_name}>{props.props.user_fullname}</span>
+                            <span className={styles.Person_name}>{props.user_fullname}</span>
                         </div>
                     </div>
                     
@@ -53,7 +52,7 @@ function Person(props){
                             <span className={styles.Person_label}>Title / company role</span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_role}>{props.props.user_role}</span>
+                            <span className={styles.Person_role}>{props.user_role}</span>
                         </div>
                     </div>
                     
@@ -62,7 +61,7 @@ function Person(props){
                             <span className={styles.Person_label}>Department</span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_department}>{props.props.user_department}</span>
+                            <span className={styles.Person_department}>{props.user_department}</span>
                         </div>
                     </div>
                     
@@ -71,7 +70,7 @@ function Person(props){
                             <span className={styles.Person_label}>Birthday</span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_birthday}>{props.props.user_dob}</span>
+                            <span className={styles.Person_birthday}>{props.user_dob}</span>
                         </div>
                     </div>
                     
@@ -80,7 +79,7 @@ function Person(props){
                             <span className={styles.Person_label}>TL</span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_tl}>{props.props.user_tl}</span>
+                            <span className={styles.Person_tl}>{props.user_tl}</span>
                         </div>
                     </div>
                     
@@ -97,7 +96,7 @@ function Person(props){
                             <span className={styles.Person_email}></span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_phone}>{props.props.email}</span>
+                            <span className={styles.Person_phone}>{props.email}</span>
                         </div>
                     </div>
                     
@@ -107,7 +106,7 @@ function Person(props){
                             <span className={styles.Person_email}></span>
                         </div>
                         <div className={styles.Person_content_column}>
-                            <span className={styles.Person_phone}>{props.props.user_phone}</span>
+                            <span className={styles.Person_phone}>{props.user_phone}</span>
                         </div>
                     </div>
                   

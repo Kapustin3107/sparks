@@ -11,7 +11,7 @@ function CartItem({ id, deleteProductFromCart}) {
     const [cartItemData, setCartItemData] = useState(null)
 
     const fetchCartItemData = async () => {
-        const API_URL = `http://localhost:1337/api/products/${id}?populate=*`
+        const API_URL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${id}?populate=*`
         
         try {
             const res = await fetch(API_URL);
@@ -44,7 +44,7 @@ function CartItem({ id, deleteProductFromCart}) {
     return (
         <li className={styles.Cart_item}>
             <div className={styles.Cart_item_image}>
-                <img src={`http://localhost:1337${productData?.product_image.data.attributes.url}`} width="92" height="83" alt= {productData?.product_name} />
+                <img src={`https://stingray-app-qqjlx.ondigitalocean.app${productData?.product_image.data.attributes.url}`} width="92" height="83" alt= {productData?.product_name} />
             </div>
             <div className={styles.Cart_item_content}>
                 <div className={styles.Cart_item_title}>
