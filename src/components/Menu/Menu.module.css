@@ -1,33 +1,32 @@
 .Menu{
     position: fixed;
     top: 0;
-    bottom: 0;
-    width: 100%;
+    left: 0;
+    width: 50%;
     background: var(--dark);
     z-index: 2;
     transition: all 0.3s;
 }
 
 .Menu_list{
-    padding: 50px 20px 20px;
+    padding: 50px 10px 10px;
     display: flex;
     flex-direction: column;
 }
 
 .Menu_item{
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
 }
 
 .Menu_close_btn{
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     width: 40px;
     height: 40px;
     display: flex;

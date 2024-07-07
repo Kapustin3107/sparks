@@ -33,9 +33,8 @@ function Product (){
                 if(cartItems){
 
                     const itemsArr = JSON.parse(cartItems).products
-                    console.log(itemsArr)
                     itemsArr.forEach(item => {
-                        if(item == currentProductData.id){
+                        if(item.id == currentProductData.id){
                             setAddedState("Product is added")
                         }
                     })
@@ -69,7 +68,12 @@ function Product (){
                 })
             );
 
-            currentProductArray.push(productData.attributes.product_id)
+            const cartItemData = {
+                id: productData.attributes.product_id,
+                quantity: "1"
+            }
+
+            currentProductArray.push(cartItemData)
 
             localStorage.setItem(
                 "cart",
@@ -78,10 +82,18 @@ function Product (){
                 })
             );
             setAddedState("Product is added")
+
         } else {
+
+            const cartItemData = {
+                id: productData.attributes.product_id,
+                quantity: "1"
+            }
+
             const addedInCart = localStorage.getItem("cart")
             const addedItems = JSON.parse(addedInCart).products
-            addedItems.push(productData.attributes.product_id)
+
+            addedItems.push(cartItemData)
 
             localStorage.setItem(
                 "cart",

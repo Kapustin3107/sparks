@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react"
 import styles from "./CartItem.module.css"
-import cart_image from "../../img/cart.jpg"
 import { InputNumber } from 'antd';
 
-const onChange = (value: number) => {
-    console.log('changed', value);
-};
 
-function CartItem({ id, deleteProductFromCart}) {
+function CartItem({ id, deleteProductFromCart, calculateSumm}) {
     const [cartItemData, setCartItemData] = useState(null)
-
+    const [quantity, setQuantity] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const currentCart = localStorage.getItem("cart")
+    const cartData = JSON.parse(currentCart)
     const fetchCartItemData = async () => {
         const API_URL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${id}?populate=*`
         
@@ -19,14 +18,17 @@ function CartItem({ id, deleteProductFromCart}) {
                 throw new Error('Network response was not ok');
             }
             const data = await res.json();
-            setCartItemData(data.data);
+            setCartItemData(data.data)
+
+            setTotalPrice(data.data.attributes.product_price)
+//            quantityHandler()
         } catch (error) {
             console.error('Fetch error:', error);
         }
     };
 
     useEffect(() => {
-        fetchCartItemData();
+        fetchCartItemData()
     }, [id]);
 
     if (!cartItemData) {
@@ -35,11 +37,40 @@ function CartItem({ id, deleteProductFromCart}) {
 
     const productData = cartItemData.attributes;
 
-    const onChange = (value) => {
-        console.log('Changed:', value);
-    };
-    
-    
+
+    function quantityHandler(){
+        cartData.products.forEach(item => {
+            if(item.id === productData?.product_id){
+                setQuantity(item.quantity)
+            }
+        })
+    }
+
+    //price amount handler
+    function totalPriceHandler(value){
+        if(value){
+            const updatedCartArray = [];
+            cartData.products.forEach(item => {
+                if(item.id === productData.product_id){
+                    item.quantity = value.toString()
+                }
+
+                updatedCartArray.push(item);
+            })
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify({
+                    products: updatedCartArray,
+                })
+            )
+
+            setQuantity(value)
+            setTotalPrice(value * productData?.product_price)
+
+            calculateSumm(updatedCartArray)
+        }
+    }
 
     return (
         <li className={styles.Cart_item}>
@@ -62,9 +93,9 @@ function CartItem({ id, deleteProductFromCart}) {
                     </div>
                 </div>
                 <div className={styles.Cart_item_footer}>
-                    <InputNumber className={styles.Cart_input} min={1} max={10} defaultValue={1} onChange={onChange} />
+                    <InputNumber className={styles.Cart_input} min={1} max={100} defaultValue={quantity} onChange={totalPriceHandler} />
                     <span className={styles.Cart_item_total}>
-                        {productData?.product_price}
+                        {totalPrice}
                     </span>
                 </div>
             </div>

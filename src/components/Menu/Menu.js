@@ -16,7 +16,12 @@ function Menu({setIsOpenClass}){
                 <img src={closeIcon} width="40" height="40" alt="icon close"/>
             </button>
             <ul className={styles.Menu_list}>
-                <li className={styles.Menu_item}>Cart(1)</li>
+                <li className={styles.Menu_item}>User details</li>
+                <li className={styles.Menu_item}>Search</li>
+                <li className={styles.Menu_item}>Transfer</li>
+                <li className={styles.Menu_item}>Store</li>
+                <li className={styles.Menu_item}>Shoping basket(1)</li>
+                <li className={styles.Menu_item}>Profiles</li>
                 <li className={styles.Menu_item}>Notifications (<span>2</span>)</li>
             </ul>
         </menu>

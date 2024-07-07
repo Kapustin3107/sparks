@@ -18,32 +18,43 @@ function Cart(){
 
     //calculate cart total price
     async function calculateSumm(items) {
+        console.log("start")
         let total = 0
 
         for(const item of items){
-            console.log(item)
-            const API_URL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${item}`
+            const API_URL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${item.id}`
             const res =  await fetch(API_URL)
-            const responceData = await res.json();
-            const currentProductData = await responceData.data;
+            const responceData = await res.json()
+            const currentProductData = await responceData.data
 
-            total += responceData.data.attributes.product_price
-            console.log(total)
+            item.quantity ?
+                total += (currentProductData.attributes.product_price) :
+                total += (currentProductData.attributes.product_price * item.quantity)
+
+            console.log(item.quantity)
         }
         setTotalAmount(total)
+        console.log(totalAmount)
     }
 
     //delete items from cart function
     const deleteProductFromCart = ({target}) => {
         const currentCart = localStorage.getItem("cart")
+
         if (currentCart) {
             const cartData = JSON.parse(currentCart)
             const cardDataUpdated = []
+
             cartData.products.forEach(item => {
-                if(item !== target.id){
-                    cardDataUpdated.push(item)
+                const updatedData = {
+                    id:item.id,
+                    quantity: 0,
+                }
+                if(item.id !== target.id){
+                    cardDataUpdated.push(updatedData)
                 }
             })
+
             localStorage.setItem(
                 "cart",
                 JSON.stringify({
@@ -62,7 +73,7 @@ function Cart(){
             <ul className={styles.Cart_wrapper}>
                     {
                         (currentCart && currentCart.length) ?
-                            (currentCart.map((item, index) => <CartItem key={index} id={item} deleteProductFromCart={deleteProductFromCart}/>)):
+                            (currentCart.map((item, index) => <CartItem key={index} id={item.id} deleteProductFromCart={deleteProductFromCart} calculateSumm={calculateSumm}/>)):
                             <h1>Cart is empty</h1>
                     }
             </ul>

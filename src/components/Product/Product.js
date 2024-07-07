@@ -10,13 +10,10 @@ function Product({props}){
         product_image,
         product_shortname,
         stock
-    } = props;
-
+    } = props
 
     
-    const imageSrcPath = product_image.data.attributes.url;
-    
-    console.log(imageSrcPath)
+    const imageSrcPath = product_image.data.attributes.url
 
     //USE TO BE CHANGED TO ANOTHER DOMAIN NAME
     const domain = "https://stingray-app-qqjlx.ondigitalocean.app";

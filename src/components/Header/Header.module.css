@@ -2,9 +2,15 @@
     position: relative;
     width: 100%;
     background: var(--dark);
-    padding: 20px 0;
+    padding: 20px;
     z-index: 12;
     transition: all 0.3s;
+}
+
+.Header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
 }
 
 .Header_logo{
@@ -15,9 +21,9 @@
 }
 
 .Header_burger{
-    position: absolute;
-    top: 10px;
-    right: 10px;
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    left: 10px;*/
     width: 40px;
     height: 40px;
     display: flex;
