@@ -31,3 +31,10 @@ export const Protector = ({Component}) => {
     return <Component />;
 };
 
+
+//cart items counter in header
+export const cartCounter = () => {
+    const stringifiedCart = localStorage.getItem("cart") || '""';
+    const cart = JSON.parse(stringifiedCart || {});
+    return cart.products.length;
+};

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import startPayment from "../../services/Payment/Payment"
 import styles from "./Cart.module.css"
+import Header from "../../components/Header/Header.js";
 import Label from "../../components/Label/Label.js"
 import CartItem from "../../components/CartItem/CartItem.js"
 
@@ -18,7 +19,6 @@ function Cart(){
 
     //calculate cart total price
     async function calculateSumm(items) {
-        console.log("start")
         let total = 0
 
         for(const item of items){
@@ -30,11 +30,8 @@ function Cart(){
             item.quantity ?
                 total += (currentProductData.attributes.product_price) :
                 total += (currentProductData.attributes.product_price * item.quantity)
-
-            console.log(item.quantity)
         }
         setTotalAmount(total)
-        console.log(totalAmount)
     }
 
     //delete items from cart function
@@ -69,6 +66,7 @@ function Cart(){
 
     return(
         <div className={styles.Cart}>
+            <Header/>
             <Label title={"Basket"}/>
             <ul className={styles.Cart_wrapper}>
                     {

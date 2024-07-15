@@ -21,14 +21,31 @@
 }
 
 .Header_burger{
-/*    position: absolute;*/
-/*    top: 10px;*/
-/*    left: 10px;*/
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Header_cart{
+    position: relative;
+}
+
+.Header_counter{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--light);
+    background: var(--primary);
+    border-radius: 50%;
 }
 
 

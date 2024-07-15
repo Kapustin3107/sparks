@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import styles from "./Store.module.css"
+import Header from "../../components/Header/Header.js";
 import Label from "../../components/Label/Label.js"
 import Search from "../../components/Search/Search.js"
 import Product from "../../components/Product/Product.js"
@@ -36,6 +37,7 @@ function Store(){
     return (
         <div className={styles.Store}>
             
+            <Header/>
             <Label title={"Sparks Store"}></Label>
 
             <div className={styles.Store_inner}>

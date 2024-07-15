@@ -33,3 +33,11 @@
     background: transparent;
     border: none;
 }
+
+.Menu_item a{
+    color: inherit;
+}
+
+.Menu_item_logout{
+    margin-top: 30px;
+}

@@ -1,7 +1,8 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect} from "react"
 import styles from "./Product.module.css"
+import Header from "../../components/Header/Header.js"
 import Label from "../../components/Label/Label.js"
-import Search from "../../components/Search/Search.js"
+
 
 
 function Product (){
@@ -107,6 +108,7 @@ function Product (){
 
     return (
         <div className={styles.Product}>
+            <Header/>
             {
                 !isLoading ?  <Label title={productData.attributes.product_name}></Label> : null
             }

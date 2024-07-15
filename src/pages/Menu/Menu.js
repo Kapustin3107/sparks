@@ -1,4 +1,5 @@
 import styles from "./Menu.module.css"
+import Header from "../../components/Header/Header.js";
 import Label from "../../components/Label/Label.js"
 
 import icon_1 from "../../img/menu-1.svg"
@@ -12,6 +13,7 @@ function Menu(){
 
     return(
         <div className={styles.Menu}>
+            <Header/>
             <Label title={"Menu"}></Label>
             <ul className={styles.Menu_list}>
                 <li>
@@ -66,30 +68,6 @@ function Menu(){
                             <div className={styles.Menu_text_content}>
                                 <span>Store</span>
                                 <p>But something spicial</p>
-                            </div>
-                        </div>
-                    </Link>
-                </li>
-
-                 <li>
-                    <Link className={styles.Menu_item} to={'/cart'}>
-                        <div className={styles.Menu_icon}>
-                            <img src={icon_4} width="100" height="100" alt="Store"/>
-                        </div>
-                        <div className={styles.Menu_text}>
-                            <div className={styles.Menu_text_content}>
-                                <span>Cart</span>
-                                <p>Your product</p>
-                            </div>
-                        </div>
-                    </Link>
-                </li>
-
-                <li>
-                    <Link className={styles.Menu_out} to={'/logout'}>
-                        <div className={styles.Menu_text}>
-                            <div className={styles.Menu_text_content}>
-                                <span>Log out</span>
                             </div>
                         </div>
                     </Link>

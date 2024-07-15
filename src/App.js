@@ -2,7 +2,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 
-import Header from "./components/Header/Header.js";
+// import Header from "./components/Header/Header.js";
 import Logout from "./components/Logout/Logout.js";
 import Login from "./pages/Login/Login.js";
 import Menu from "./pages/Menu/Menu.js";
@@ -65,7 +65,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
       <main className="App_main_section">
 
         <RouterProvider router={router}/>

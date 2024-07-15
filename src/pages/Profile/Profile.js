@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { jwtDecode } from "jwt-decode";
+import Header from "../../components/Header/Header.js"
 import Person from "../../components/Person/Person.js"
 
 
@@ -36,6 +37,9 @@ function Profile(){
         return <div>Error: {error}</div>
     }
 
-    return ( <div> {isLoading ? <h1>Loading...</h1> : <Person props={userData}/>} </div>)
+    return ( <div>
+        <Header/>
+        {isLoading ? <h1>Loading...</h1> : <Person props={userData}/>}
+        </div>)
 }
 export default Profile
