@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react"
 import startPayment from "../../services/Payment/Payment"
 import styles from "./Cart.module.css"
-import Header from "../../components/Header/Header.js";
+import Header from "../../components/Header/Header.js"
 import Label from "../../components/Label/Label.js"
 import CartItem from "../../components/CartItem/CartItem.js"
 
 function Cart(){
     const addedItems = (localStorage.cart) ? JSON.parse(localStorage.cart) : null
     const [currentCart, setCurrentCart] = useState([])
-    const [totalAmount, setTotalAmount] = useState(0)
+    const [totalAmount , setTotalAmount] = useState(0)
 
     useEffect(() => {
         if(addedItems){
             setCurrentCart(addedItems.products)
-            calculateSumm(addedItems.products)
+//            calculateSumm(addedItems.products)
         }
-    }, [])
+    }, ['addedItems.products', 'calculateSumm', 'fetchCartItemData'])
 
     //calculate cart total price
     async function calculateSumm(items) {
+
         let total = 0
 
         for(const item of items){
@@ -32,6 +33,8 @@ function Cart(){
                 total += (currentProductData.attributes.product_price * item.quantity)
         }
         setTotalAmount(total)
+
+        console.log("total summ use to be calculated now")
     }
 
     //delete items from cart function
@@ -69,11 +72,20 @@ function Cart(){
             <Header/>
             <Label title={"Basket"}/>
             <ul className={styles.Cart_wrapper}>
-                    {
-                        (currentCart && currentCart.length) ?
-                            (currentCart.map((item, index) => <CartItem key={index} id={item.id} deleteProductFromCart={deleteProductFromCart} calculateSumm={calculateSumm}/>)):
-                            <h1>Cart is empty</h1>
+                {(() => {
+                    if (currentCart && currentCart.length) {
+                        return currentCart.map((item, index) => (
+                            <CartItem
+                                key={index}
+                                id={item.id}
+                                deleteProductFromCart={deleteProductFromCart}
+                                calculateSumm={calculateSumm}
+                            />
+                        ));
+                    } else {
+                        return <h1>Cart is empty</h1>;
                     }
+                })()}
             </ul>
             <div className={styles.Cart_footer}>
                 <div className={styles.Cart_footer_wrapper}>

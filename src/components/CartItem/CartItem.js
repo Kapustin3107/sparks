@@ -9,6 +9,9 @@ function CartItem({ id, deleteProductFromCart, calculateSumm}) {
     const [totalPrice, setTotalPrice] = useState(0);
     const currentCart = localStorage.getItem("cart")
     const cartData = JSON.parse(currentCart)
+
+    const addedItems = (localStorage.cart) ? JSON.parse(localStorage.cart) : null
+
     const fetchCartItemData = async () => {
         const API_URL = `https://stingray-app-qqjlx.ondigitalocean.app/api/products/${id}?populate=*`
         
@@ -29,6 +32,8 @@ function CartItem({ id, deleteProductFromCart, calculateSumm}) {
 
     useEffect(() => {
         fetchCartItemData()
+        calculateSumm(addedItems.products)
+        console.log(calculateSumm)
     }, [id]);
 
     if (!cartItemData) {
